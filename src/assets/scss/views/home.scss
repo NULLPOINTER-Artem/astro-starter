@@ -1,0 +1,35 @@
+.home {
+  background-color: var(--color-beige);
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__link {
+  position: relative;
+  margin-bottom: 40px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -52px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 32px;
+    height: 32px;
+    background-image: svg-load("astro.svg", width=32, height=32);
+  }
+}
+
+.home__icon {
+  width: 100px;
+  height: 120px;
+}
+
+.home__heading {
+  color: var(--color-lilac);
+  font-size: 32px;
+}

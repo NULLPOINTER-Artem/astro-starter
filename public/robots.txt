@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# Allow: /something/ && Disallow: * OR Disallow: /images/*.svg$
+# Sitemap: https://<YOUR SITE>/sitemap-index.xml

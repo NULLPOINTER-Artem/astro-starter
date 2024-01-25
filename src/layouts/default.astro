@@ -1,0 +1,30 @@
+---
+interface Props {
+  pageTitle: string;
+  pageDescription: string;
+}
+
+const { pageTitle, pageDescription } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global lang="scss">
+  @import "./../assets/scss/styles.scss";
+</style>
