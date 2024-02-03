@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+
+const PATH = "../assets/images/";
+interface Props {
+  nameImage: string;
+  altText: string;
+}
+
+const { altText, nameImage } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/images/*.{jpeg,jpg,png,gif}"
+);
+const foundImageSrc = Object.keys(images).find((imageItem) => {
+  const name = imageItem.split(PATH)[1];
+
+  return name === nameImage;
+});
+
+if (!foundImageSrc || !images[foundImageSrc])
+  throw new Error(
+    `"${nameImage}" does not exist in glob: "${PATH}*.{jpeg,jpg,png,gif}"`
+  );
+---
+
+<Image src={images[foundImageSrc]()} alt={altText} />

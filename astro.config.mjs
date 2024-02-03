@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import Compress from "astro-compress";
 import serviceWorker from "astrojs-service-worker";
 import sitemap from '@astrojs/sitemap';
 import Critters from "astro-critters";
@@ -22,6 +21,5 @@ export default defineConfig({
     sitemap(),
     Critters(),
     Rome({ Logger: 1 }), // linter
-    Compress({ Logger: 1 }),
   ]
 });
